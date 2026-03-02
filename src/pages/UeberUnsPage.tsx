@@ -1,151 +1,240 @@
 import React from 'react';
-import { BubbleDecor } from '../components/BubbleDecor';
-import { Leaf, Heart, Users, Briefcase, ArrowRight } from 'lucide-react';
+import {
+  Leaf,
+  Heart,
+  Briefcase,
+  ArrowRight,
+  Truck,
+  Users,
+  Trophy } from
+'lucide-react';
+import { AnimatedBubbles } from '../components/AnimatedBubbles';
 export function UeberUnsPage() {
   return (
-    <main className="flex-grow bg-[#FFFBF5]">
+    <div className="w-full pb-20">
       {/* Header */}
-      <section className="relative bg-gradient-to-r from-orange-500 to-amber-600 text-white py-16 overflow-hidden">
-        <BubbleDecor variant="light" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+      <div className="relative bg-gradient-to-br from-orange-600 via-orange-500 to-amber-500 py-16 text-white text-center overflow-hidden">
+        <AnimatedBubbles />
+        <div className="relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Über GetränkeLAND
           </h1>
-          <p className="text-xl text-orange-100 max-w-2xl mx-auto">
+          <p className="text-xl text-orange-50 max-w-2xl mx-auto px-4">
             Seit über 30 Jahren Ihr zuverlässiger Partner für Getränke in der
             Region. Familiengeführt, bodenständig und immer nah am Kunden.
           </p>
         </div>
-      </section>
+      </div>
 
-      {/* History Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-navy-900 rounded-2xl transform rotate-2 opacity-10"></div>
-              <img
-                src="/gemini-3-pro-image-preview_b_make_a_me_shop_drink.png"
-                alt="GetränkeLAND Filiale"
-                className="relative rounded-xl shadow-xl w-full h-auto" />
-
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy-900 mb-6">
-                Unsere Geschichte
-              </h2>
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
-                <p>
-                  Was als kleiner Getränkemarkt begann, ist heute zu einem
-                  festen Bestandteil der Region gewachsen. Mit mittlerweile 39
-                  Filialen in Sachsen und Südbrandenburg sind wir stolz darauf,
-                  unsere Kunden täglich mit einer großen Auswahl und
-                  persönlichem Service zu begeistern.
-                </p>
-                <p>
-                  Als Familienunternehmen legen wir besonderen Wert auf
-                  langfristige Beziehungen – zu unseren Kunden, unseren
-                  Mitarbeitern und unseren Lieferanten.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Cards */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-            {
-              title: 'Nachhaltigkeit',
-              icon: Leaf,
-              desc: 'Wir setzen auf Mehrweg und kurze Transportwege. Durch die Zusammenarbeit mit regionalen Brauereien und Brunnen schonen wir die Umwelt.',
-              color: 'text-green-600',
-              bg: 'bg-green-50'
-            },
-            {
-              title: 'Verantwortung',
-              icon: Heart,
-              desc: 'Wir engagieren uns in der Region und unterstützen lokale Vereine und Veranstaltungen. Soziales Miteinander ist uns wichtig.',
-              color: 'text-red-500',
-              bg: 'bg-red-50'
-            },
-            {
-              title: 'Karriere',
-              icon: Users,
-              desc: 'Wir suchen ständig motivierte Mitarbeiter für unsere Märkte. Werden Sie Teil der GetränkeLAND Familie!',
-              color: 'text-blue-600',
-              bg: 'bg-blue-50'
-            }].
-            map((value, idx) =>
-            <div
-              key={idx}
-              className="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-shadow text-center">
-
-                <div
-                className={`w-16 h-16 ${value.bg} ${value.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
-
-                  <value.icon className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-navy-900 mb-4">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600">{value.desc}</p>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Careers Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-100 to-amber-50"></div>
-        <BubbleDecor variant="orange" className="opacity-50" />
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="bg-white rounded-3xl shadow-2xl p-10 md:p-16">
-            <div className="inline-flex items-center justify-center p-4 bg-navy-50 rounded-full text-navy-900 mb-6">
-              <Briefcase className="w-8 h-8" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy-900 mb-6">
-              Stellenausschreibungen
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        {/* History Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+          <div>
+            <h2 className="text-3xl font-bold text-[#1E3A5F] mb-6">
+              Unsere Geschichte
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Wir suchen neue Getränkemärkte zur Miete / Pacht (250 – 450 m²)
-              und engagierte Mitarbeiter/innen.
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              Was als kleiner Getränkemarkt begann, ist heute zu einem festen
+              Bestandteil der Region gewachsen. Mit mittlerweile 39 Filialen in
+              Sachsen und Südbrandenburg sind wir stolz darauf, unsere Kunden
+              täglich mit einer großen Auswahl und persönlichem Service zu
+              begeistern.
             </p>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Als Familienunternehmen legen wir besonderen Wert auf langfristige
+              Beziehungen – zu unseren Kunden, unseren Mitarbeitern und unseren
+              Lieferanten.
+            </p>
+          </div>
+          <div className="relative">
+            <div className="absolute -inset-4 bg-orange-200 rounded-3xl transform rotate-3 z-0"></div>
+            <img
+              src="/gemini-3-pro-image-preview_b_make_a_me_shop_drink.png"
+              alt="GetränkeLAND Historie"
+              className="rounded-2xl shadow-xl relative z-10 w-full object-cover h-[400px]" />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 text-left">
-              {[
-              'Verkäufer/in (m/w/d) in Voll- oder Teilzeit',
-              'Marktleiter/in (m/w/d)',
-              'Aushilfen (m/w/d) auf 520€ Basis'].
-              map((job, i) =>
-              <div
-                key={i}
-                className="bg-gray-50 p-4 rounded-xl border border-gray-100 font-medium text-navy-900 flex items-center">
-
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div>
-                  {job}
-                </div>
-              )}
-            </div>
-
-            <div className="bg-navy-900 text-white p-6 rounded-xl mb-8 inline-block w-full max-w-md">
-              <p className="text-sm text-gray-400 uppercase tracking-wider mb-1">
-                Ansprechpartner
-              </p>
-              <p className="text-xl font-bold">Herr David Horn</p>
-            </div>
-
-            <button className="w-full md:w-auto px-8 py-4 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-700 transition-colors shadow-lg flex items-center justify-center mx-auto">
-              Jetzt bewerben <ArrowRight className="ml-2 w-5 h-5" />
-            </button>
           </div>
         </div>
-      </section>
-    </main>);
+
+        {/* Nachhaltigkeit & Verantwortung */}
+        <div className="mb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#1E3A5F] mb-4">
+              Nachhaltigkeit & Verantwortung
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Wir übernehmen Verantwortung für unsere Region und die Umwelt.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 text-center">
+              <div className="w-14 h-14 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Leaf className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-bold text-[#1E3A5F] mb-2">
+                Mehrweg-Fokus
+              </h3>
+              <p className="text-sm text-gray-600">
+                Wir fördern aktiv den Verkauf von umweltfreundlichen
+                Mehrwegverpackungen.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 text-center">
+              <div className="w-14 h-14 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-bold text-[#1E3A5F] mb-2">
+                Regionale Partner
+              </h3>
+              <p className="text-sm text-gray-600">
+                Enge Zusammenarbeit mit lokalen Brauereien und Brunnen stärkt
+                die Region.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 text-center">
+              <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Truck className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-bold text-[#1E3A5F] mb-2">
+                Kurze Wege
+              </h3>
+              <p className="text-sm text-gray-600">
+                Durch regionale Lieferanten reduzieren wir Transportwege und
+                CO2-Emissionen.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 text-center">
+              <div className="w-14 h-14 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-bold text-[#1E3A5F] mb-2">
+                Soziales Engagement
+              </h3>
+              <p className="text-sm text-gray-600">
+                Wir unterstützen lokale Projekte und Vereine in unserem
+                Einzugsgebiet.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Galerie */}
+        <div className="mb-24">
+          <h2 className="text-3xl font-bold text-[#1E3A5F] mb-8 text-center">
+            Einblicke in unsere Märkte
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <img
+              src="/gpt-image-1.5-high-fidelity_a_make_a_me_shop_drink.png"
+              alt="GetränkeLAND Markt außen"
+              className="w-full h-64 object-cover rounded-2xl shadow-md" />
+
+            <img
+              src="/gemini-3-pro-image-preview_b_make_a_me_shop_drink.png"
+              alt="GetränkeLAND Markt innen"
+              className="w-full h-64 object-cover rounded-2xl shadow-md" />
+
+            <img
+              src="/image.png"
+              alt="GetränkeLAND Sortiment"
+              className="w-full h-64 object-cover rounded-2xl shadow-md" />
+
+          </div>
+        </div>
+
+        {/* Sponsoring */}
+        <div className="mb-24 bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-200">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-[#1E3A5F] mb-4">
+              Sponsoring & Engagement
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Als regionales Unternehmen ist es uns eine Herzensangelegenheit,
+              das kulturelle und sportliche Leben vor Ort zu fördern.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <Trophy className="w-8 h-8 text-orange-600 mb-4" />
+              <h3 className="text-xl font-bold text-[#1E3A5F] mb-2">
+                Sportvereine
+              </h3>
+              <p className="text-gray-600">
+                Wir unterstützen lokale Sportvereine mit Ausrüstung und
+                Getränkesponsoring für Turniere.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <Users className="w-8 h-8 text-orange-600 mb-4" />
+              <h3 className="text-xl font-bold text-[#1E3A5F] mb-2">
+                Kulturveranstaltungen
+              </h3>
+              <p className="text-gray-600">
+                Von Stadtfesten bis zu Konzerten – wir sind als Getränkepartner
+                bei vielen Events dabei.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <Heart className="w-8 h-8 text-orange-600 mb-4" />
+              <h3 className="text-xl font-bold text-[#1E3A5F] mb-2">
+                Gemeinnützige Projekte
+              </h3>
+              <p className="text-gray-600">
+                Wir fördern soziale Einrichtungen und Projekte, die das
+                Miteinander in der Region stärken.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Jobs Section */}
+        <div className="bg-[#1E3A5F] rounded-3xl p-8 md:p-12 text-white">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-4 text-orange-500">
+                Karriere bei GetränkeLAND
+              </h2>
+              <p className="text-lg text-gray-300 mb-6">
+                Wir suchen ständig motivierte Mitarbeiter für unsere Märkte
+                sowie neue Standorte zur Miete oder Pacht (250 – 450 m²). Werden
+                Sie Teil unseres familiären Teams!
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center text-gray-300">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                  Verkäufer/in (m/w/d) in Voll- oder Teilzeit
+                </li>
+                <li className="flex items-center text-gray-300">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                  Marktleiter/in (m/w/d)
+                </li>
+                <li className="flex items-center text-gray-300">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                  Aushilfen (m/w/d) auf 520€ Basis
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 text-[#1E3A5F] flex flex-col justify-center text-center">
+              <Briefcase className="w-12 h-12 text-orange-600 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold mb-2">Interesse geweckt?</h3>
+              <p className="text-gray-600 mb-6">
+                Entdecken Sie alle offenen Stellen und bewerben Sie sich direkt
+                online.
+              </p>
+
+              <button className="w-full py-4 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-700 transition-colors flex items-center justify-center group shadow-md">
+                Alle Stellenangebote
+                <ArrowRight className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>);
 
 }

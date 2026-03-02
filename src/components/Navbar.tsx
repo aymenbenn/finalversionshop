@@ -1,26 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { Menu, X, MapPin } from 'lucide-react';
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
   const navLinks = [
   {
     name: 'Marktfinder',
     path: '/marktfinder',
-    icon: <MapPin className="w-4 h-4 mr-1" />
+    icon: <MapPin className="w-4 h-4 mr-1 inline" />
   },
   {
     name: 'Angebote',
@@ -43,70 +30,75 @@ export function Navbar() {
     path: '/kontakt'
   }];
 
-  const isActive = (path: string) => {
-    return location.pathname === path;
-  };
+  const closeMenu = () => setIsOpen(false);
   return (
-    <nav
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-white py-4'}`}>
-
+    <nav className="sticky top-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link to="/" className="flex-shrink-0 flex items-center">
-            <img
-              src="/Getrankelandlogo.jpg"
-              alt="GetränkeLAND Logo"
-              className="h-12 w-auto object-contain" />
-
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) =>
+        <div className="flex justify-between h-20">
+          <div className="flex items-center">
             <Link
+              to="/"
+              className="flex-shrink-0 flex items-center"
+              onClick={closeMenu}>
+
+              <img
+                className="h-12 w-auto"
+                src="/Getrankelandlogo.jpg"
+                alt="GetränkeLAND Logo" />
+
+            </Link>
+          </div>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex md:items-center md:space-x-8">
+            {navLinks.map((link) =>
+            <NavLink
               key={link.name}
               to={link.path}
-              className={`flex items-center text-sm font-bold transition-colors duration-200 ${isActive(link.path) ? 'text-orange-600 border-b-2 border-orange-500' : 'text-navy-900 hover:text-orange-500'}`}>
+              className={({ isActive }) =>
+              `text-base font-medium transition-colors duration-200 flex items-center ${isActive ? 'text-orange-500' : 'text-[#1E3A5F] hover:text-orange-500'}`
+              }>
 
                 {link.icon}
                 {link.name}
-              </Link>
+              </NavLink>
             )}
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-navy-900 hover:text-orange-600 focus:outline-none"
-              aria-label="Toggle menu">
+              className="inline-flex items-center justify-center p-2 rounded-md text-[#1E3A5F] hover:text-orange-500 hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500"
+              aria-expanded="false">
 
+              <span className="sr-only">Open main menu</span>
               {isOpen ?
-              <X className="h-6 w-6" /> :
+              <X className="block h-6 w-6" aria-hidden="true" /> :
 
-              <Menu className="h-6 w-6" />
+              <Menu className="block h-6 w-6" aria-hidden="true" />
               }
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Panel */}
       {isOpen &&
-      <div className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
-          <div className="px-4 pt-2 pb-6 space-y-2">
+      <div className="md:hidden absolute w-full bg-white border-b border-gray-200 shadow-lg">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) =>
-          <Link
+          <NavLink
             key={link.name}
             to={link.path}
-            className={`block px-3 py-3 rounded-md text-base font-medium ${isActive(link.path) ? 'bg-orange-50 text-orange-600' : 'text-navy-900 hover:bg-gray-50 hover:text-orange-600'}`}>
+            onClick={closeMenu}
+            className={({ isActive }) =>
+            `block px-3 py-2 rounded-md text-base font-medium ${isActive ? 'text-orange-500 bg-orange-50' : 'text-[#1E3A5F] hover:text-orange-500 hover:bg-orange-50'}`
+            }>
 
-                <div className="flex items-center">
-                  {link.icon}
-                  {link.name}
-                </div>
-              </Link>
+                {link.icon}
+                {link.name}
+              </NavLink>
           )}
           </div>
         </div>

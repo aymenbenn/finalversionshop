@@ -1,94 +1,93 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
+import { AnimatedBubbles } from './AnimatedBubbles';
+import { PhoneButton, EmailButton, LocationButton } from './ContactIconButtons';
 export function Footer() {
   return (
-    <footer className="bg-navy-900 text-white pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Brand Column */}
+    <footer className="bg-[#1E3A5F] text-white pt-12 pb-8 relative overflow-hidden z-10">
+      <AnimatedBubbles />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          {/* Company Info */}
           <div>
-            <div className="bg-white p-2 inline-block rounded-lg mb-6">
-              <img
-                src="/Getrankelandlogo.jpg"
-                alt="GetränkeLAND"
-                className="h-10 w-auto" />
+            <img
+              className="h-10 w-auto mb-4 bg-white p-1 rounded"
+              src="/Getrankelandlogo.jpg"
+              alt="GetränkeLAND Logo" />
 
-            </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <p className="text-gray-300 text-sm leading-relaxed">
               Ihr regionaler Getränkefachmarkt mit großer Auswahl und
               freundlichem Service. Wir sind stolz auf über 30 Jahre Erfahrung
               und unsere regionale Verbundenheit.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-orange-500 transition-colors">
-
-                <Facebook className="h-6 w-6" />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-orange-500 transition-colors">
-
-                <Instagram className="h-6 w-6" />
-              </a>
-            </div>
           </div>
 
-          {/* Navigation Column */}
+          {/* Navigation */}
           <div>
-            <h3 className="text-xl font-heading font-bold mb-6 text-orange-500">
+            <h3 className="text-lg font-semibold mb-4 text-orange-500">
               Navigation
             </h3>
-            <ul className="space-y-3">
-              {[
-              {
-                name: 'Marktfinder',
-                path: '/'
-              },
-              {
-                name: 'Angebote',
-                path: '/angebote'
-              },
-              {
-                name: 'Sortiment',
-                path: '/sortiment'
-              },
-              {
-                name: 'Service',
-                path: '/service'
-              },
-              {
-                name: 'Über uns',
-                path: '/ueber-uns'
-              },
-              {
-                name: 'Kontakt',
-                path: '/kontakt'
-              }].
-              map((link) =>
-              <li key={link.name}>
-                  <Link
-                  to={link.path}
-                  className="text-gray-300 hover:text-orange-500 transition-colors flex items-center">
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  to="/marktfinder"
+                  className="text-gray-300 hover:text-white transition-colors">
 
-                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"></span>
-                    {link.name}
-                  </Link>
-                </li>
-              )}
+                  Marktfinder
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/angebote"
+                  className="text-gray-300 hover:text-white transition-colors">
+
+                  Angebote
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/sortiment"
+                  className="text-gray-300 hover:text-white transition-colors">
+
+                  Sortiment
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/service"
+                  className="text-gray-300 hover:text-white transition-colors">
+
+                  Service
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/ueber-uns"
+                  className="text-gray-300 hover:text-white transition-colors">
+
+                  Über uns
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/kontakt"
+                  className="text-gray-300 hover:text-white transition-colors">
+
+                  Kontakt
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Contact Column */}
+          {/* Contact */}
           <div>
-            <h3 className="text-xl font-heading font-bold mb-6 text-orange-500">
+            <h3 className="text-lg font-semibold mb-4 text-orange-500">
               Kontakt
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-orange-500 mr-3 mt-1 flex-shrink-0" />
+                <MapPin className="w-5 h-5 mr-3 text-orange-500 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-300">
                   RMM GetränkeLAND
                   <br />
@@ -97,16 +96,11 @@ export function Footer() {
                 </span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
-                <a
-                  href="tel:03591371323"
-                  className="text-gray-300 hover:text-white transition-colors">
-
-                  03591 371323
-                </a>
+                <Phone className="w-5 h-5 mr-3 text-orange-500 flex-shrink-0" />
+                <span className="text-gray-300">03591 371323</span>
               </li>
               <li className="flex items-center">
-                <Mail className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
+                <Mail className="w-5 h-5 mr-3 text-orange-500 flex-shrink-0" />
                 <a
                   href="mailto:info@getraenkeland-rmm.de"
                   className="text-gray-300 hover:text-white transition-colors">
@@ -119,24 +113,27 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-navy-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-          <p className="mb-4 md:mb-0">
+        <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-400 text-sm mb-4 md:mb-0">
             © 2026 GetränkeLAND RMM. Alle Rechte vorbehalten.
           </p>
-          <div className="flex space-x-6">
+          <div className="flex space-x-4 text-sm">
             <Link
-              to="/impressum"
-              className="hover:text-white transition-colors">
+              to="#"
+              className="text-gray-400 hover:text-white transition-colors">
 
               Impressum
             </Link>
             <Link
-              to="/datenschutz"
-              className="hover:text-white transition-colors">
+              to="#"
+              className="text-gray-400 hover:text-white transition-colors">
 
               Datenschutzerklärung
             </Link>
-            <Link to="/agb" className="hover:text-white transition-colors">
+            <Link
+              to="#"
+              className="text-gray-400 hover:text-white transition-colors">
+
               AGB
             </Link>
           </div>
