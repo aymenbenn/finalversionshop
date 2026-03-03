@@ -32,7 +32,7 @@ export function SortimentPage() {
     },
     {
       title: 'Limonade & Cola',
-      image: '/imagecola.jpeg',
+      image: '/imagecola.jpg',
       gradient: 'from-red-400 to-orange-500',
       count: '5 Kategorien',
       items: [
@@ -65,7 +65,7 @@ export function SortimentPage() {
     },
     {
       title: 'Spirituosen',
-      image: '/imagespirituosen.jpeg',
+      image: '/imagespirituosen.jpg',
       gradient: 'from-slate-600 to-slate-800',
       count: '6 Kategorien',
       items: ['Whisky', 'Gin', 'Wodka', 'Rum', 'Liköre', 'Kräuterschnaps'],
