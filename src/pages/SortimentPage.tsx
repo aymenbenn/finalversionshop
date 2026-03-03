@@ -1,70 +1,76 @@
-import React from 'react';
-import { Info, FileText, BookOpen, Building } from 'lucide-react';
-import { AnimatedBubbles } from '../components/AnimatedBubbles';
+import React from 'react'
+import { Info, FileText, BookOpen, Building } from 'lucide-react'
+import { AnimatedBubbles } from '../components/AnimatedBubbles'
 export function SortimentPage() {
   const categories = [
-  {
-    title: 'Wasser',
-    gradient: 'from-blue-400 to-cyan-500',
-    count: '5 Kategorien',
-    items: [
-    'Mineralwasser',
-    'Heilwasser',
-    'Tafelwasser',
-    'Aromatisiertes Wasser',
-    'Babywasser']
-
-  },
-  {
-    title: 'Bier',
-    gradient: 'from-amber-500 to-yellow-600',
-    count: '6 Kategorien',
-    items: [
-    'Pils',
-    'Weizen',
-    'Helles',
-    'Schwarzbier',
-    'Alkoholfreies Bier',
-    'Craft Beer']
-
-  },
-  {
-    title: 'Limonade & Cola',
-    gradient: 'from-red-400 to-orange-500',
-    count: '5 Kategorien',
-    items: [
-    'Cola & Cola-Mix',
-    'Orangenlimonade',
-    'Zitronenlimonade',
-    'Fassbrause',
-    'Energy Drinks']
-
-  },
-  {
-    title: 'Wein & Sekt',
-    gradient: 'from-purple-500 to-rose-500',
-    count: '5 Kategorien',
-    items: ['Rotwein', 'Weißwein', 'Rosé', 'Sekt & Prosecco', 'Glühwein']
-  },
-  {
-    title: 'Fruchthaltige Getränke',
-    gradient: 'from-green-400 to-emerald-500',
-    count: '5 Kategorien',
-    items: [
-    'Apfelsaft',
-    'Orangensaft',
-    'Multivitamin',
-    'Gemüsesäfte',
-    'Bio-Säfte']
-
-  },
-  {
-    title: 'Spirituosen',
-    gradient: 'from-slate-600 to-slate-800',
-    count: '6 Kategorien',
-    items: ['Whisky', 'Gin', 'Wodka', 'Rum', 'Liköre', 'Kräuterschnaps']
-  }];
-
+    {
+      title: 'Wasser',
+      image: '/image-2.png',
+      gradient: 'from-blue-400 to-cyan-500',
+      count: '5 Kategorien',
+      items: [
+        'Mineralwasser',
+        'Heilwasser',
+        'Tafelwasser',
+        'Aromatisiertes Wasser',
+        'Babywasser',
+      ],
+    },
+    {
+      title: 'Bier',
+      image: '/imagebeer.png',
+      gradient: 'from-amber-500 to-yellow-600',
+      count: '6 Kategorien',
+      items: [
+        'Pils',
+        'Weizen',
+        'Helles',
+        'Schwarzbier',
+        'Alkoholfreies Bier',
+        'Craft Beer',
+      ],
+    },
+    {
+      title: 'Limonade & Cola',
+      image: '/imagecola.jpeg',
+      gradient: 'from-red-400 to-orange-500',
+      count: '5 Kategorien',
+      items: [
+        'Cola & Cola-Mix',
+        'Orangenlimonade',
+        'Zitronenlimonade',
+        'Fassbrause',
+        'Energy Drinks',
+      ],
+    },
+    {
+      title: 'Wein & Sekt',
+      image: '/image-1.png',
+      gradient: 'from-purple-500 to-rose-500',
+      count: '5 Kategorien',
+      items: ['Rotwein', 'Weißwein', 'Rosé', 'Sekt & Prosecco', 'Glühwein'],
+    },
+    {
+      title: 'Fruchthaltige Getränke',
+      image: '/imagefruchtsaft.jpeg',
+      gradient: 'from-green-400 to-emerald-500',
+      count: '5 Kategorien',
+      items: [
+        'Apfelsaft',
+        'Orangensaft',
+        'Multivitamin',
+        'Gemüsesäfte',
+        'Bio-Säfte',
+      ],
+    },
+    {
+      title: 'Spirituosen',
+      image: '/imagespirituosen.jpeg',
+      gradient: 'from-slate-600 to-slate-800',
+      count: '6 Kategorien',
+      items: ['Whisky', 'Gin', 'Wodka', 'Rum', 'Liköre', 'Kräuterschnaps'],
+    },
+  ]
   return (
     <div className="w-full pb-20">
       {/* Header */}
@@ -104,31 +110,39 @@ export function SortimentPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
         {/* Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {categories.map((category) =>
-          <div
-            key={category.title}
-            className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
-
-              <div
-              className={`h-32 bg-gradient-to-br ${category.gradient} flex flex-col justify-center px-6 text-white`}>
-
-                <h2 className="text-2xl font-bold mb-1">{category.title}</h2>
-                <span className="text-sm opacity-90 font-medium">
-                  {category.count}
-                </span>
+          {categories.map((category) => (
+            <div
+              key={category.title}
+              className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow flex flex-col"
+            >
+              <div className="h-48 relative overflow-hidden">
+                <img
+                  src={category.image}
+                  alt={category.title}
+                  className="w-full h-full object-cover"
+                />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent`}
+                ></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h2 className="text-2xl font-bold mb-1">{category.title}</h2>
+                  <span className="text-sm opacity-90 font-medium">
+                    {category.count}
+                  </span>
+                </div>
               </div>
               <div className="p-6 flex-grow">
                 <ul className="space-y-3">
-                  {category.items.map((item, idx) =>
-                <li key={idx} className="flex items-center text-gray-700">
+                  {category.items.map((item, idx) => (
+                    <li key={idx} className="flex items-center text-gray-700">
                       <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
                       {item}
                     </li>
-                )}
+                  ))}
                 </ul>
               </div>
             </div>
-          )}
+          ))}
         </div>
 
         {/* Info Section */}
@@ -153,6 +167,6 @@ export function SortimentPage() {
           </div>
         </div>
       </div>
-    </div>);
-
+    </div>
+  )
 }
