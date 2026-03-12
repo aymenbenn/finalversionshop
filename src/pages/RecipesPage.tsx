@@ -37,9 +37,21 @@ export const RecipesPage: React.FC = () => {
       Getränken. Mit verschiedenen Früchten, Kräutern und Tonic
       entstehen kreative Cocktailvariationen.`,
     },
-  ]
+  ];
+
   return (
     <div className="bg-gray-50 min-h-screen">
+
+      {/* Top Banner */}
+      <div className="w-full">
+        <img
+          src="/recipe banner.png"
+          alt="Recipe Banner"
+          className="w-full object-cover"
+        />
+      </div>
+
+      {/* Orange Section */}
       <section className="text-center py-16 bg-orange-500 text-white">
         <h1 className="text-4xl font-bold mb-4">Getränke Rezepte entdecken</h1>
         <p className="max-w-2xl mx-auto">
@@ -48,35 +60,32 @@ export const RecipesPage: React.FC = () => {
         </p>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Recipe Cards */}
+      <section className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-8">
         {topCards.map((card, index) => (
           <motion.div
             key={index}
-            whileHover={{
-              y: -10,
-            }}
+            whileHover={{ y: -10 }}
             className="bg-white rounded-xl shadow-lg overflow-hidden"
           >
             <img
               src={card.img}
               alt={card.title}
-              className="h-48 w-full object-cover"
+              className="h-64 w-full object-cover"
             />
 
             <div className="p-6">
-              <h3 className="text-xl font-bold text-orange-500 mb-2">
+              <h3 className="text-2xl font-bold text-orange-500 mb-2">
                 {card.title}
               </h3>
 
               <p className="text-gray-500 text-sm mb-3">{card.description}</p>
 
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {card.text}
-              </p>
+              <p className="text-gray-600 text-sm leading-relaxed">{card.text}</p>
             </div>
           </motion.div>
         ))}
       </section>
     </div>
-  )
-}
+  );
+};
