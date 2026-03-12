@@ -44,11 +44,11 @@ export const RecipesPage: React.FC = () => {
 
       {/* Top Banner */}
       <div className="w-full">
-        <img
-          src="/recipebanner.png"
-          alt="Recipe Banner"
-          className="w-full object-cover"
-        />
+      <img
+  src="/recipebanner.png"
+  alt="Recipe Banner"
+  className="w-full object-cover"
+/>
       </div>
 
       {/* Orange Section */}
