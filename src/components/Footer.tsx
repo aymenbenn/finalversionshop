@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { MapPinIcon, PhoneIcon, MailIcon } from 'lucide-react';
-import { AnimatedBubbles } from './AnimatedBubbles';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { MapPinIcon, PhoneIcon, MailIcon } from 'lucide-react'
+import { AnimatedBubbles } from './AnimatedBubbles'
 export function Footer() {
   return (
     <footer className="bg-[#1E3A5F] text-white pt-12 pb-8 relative overflow-hidden z-10">
@@ -10,11 +10,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <img
-              className="h-10 w-auto mb-4 bg-white p-1 rounded"
-              src="/Getrankelandlogo.jpg"
-              alt="GetränkeLAND Logo" />
-
+            <div className="h-10 w-32 mb-4 bg-gray-200 border-2 border-dashed border-gray-400 flex items-center justify-center text-gray-500 text-xs font-bold rounded">
+              LOGO PLATZHALTER
+            </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Ihr regionaler Getränkefachmarkt mit großer Auswahl und
               freundlichem Service. Wir sind stolz auf über 30 Jahre Erfahrung
@@ -31,49 +29,57 @@ export function Footer() {
               <li>
                 <Link
                   to="/marktfinder"
-                  className="text-gray-300 hover:text-white transition-colors">
-
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Marktfinder
                 </Link>
               </li>
               <li>
                 <Link
                   to="/angebote"
-                  className="text-gray-300 hover:text-white transition-colors">
-
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Angebote
                 </Link>
               </li>
               <li>
                 <Link
                   to="/sortiment"
-                  className="text-gray-300 hover:text-white transition-colors">
-
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Sortiment
                 </Link>
               </li>
               <li>
                 <Link
                   to="/service"
-                  className="text-gray-300 hover:text-white transition-colors">
-
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Service
                 </Link>
               </li>
               <li>
                 <Link
                   to="/ueber-uns"
-                  className="text-gray-300 hover:text-white transition-colors">
-
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Über uns
                 </Link>
               </li>
               <li>
                 <Link
                   to="/kontakt"
-                  className="text-gray-300 hover:text-white transition-colors">
-
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Kontakt
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/ueber-uns"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Jobs
                 </Link>
               </li>
             </ul>
@@ -102,8 +108,8 @@ export function Footer() {
                 <MailIcon className="w-5 h-5 mr-3 text-orange-500 flex-shrink-0" />
                 <a
                   href="mailto:info@getraenkeland-rmm.de"
-                  className="text-gray-300 hover:text-white transition-colors">
-
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   info@getraenkeland-rmm.de
                 </a>
               </li>
@@ -119,25 +125,25 @@ export function Footer() {
           <div className="flex space-x-4 text-sm">
             <Link
               to="#"
-              className="text-gray-400 hover:text-white transition-colors">
-
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               Impressum
             </Link>
             <Link
               to="#"
-              className="text-gray-400 hover:text-white transition-colors">
-
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               Datenschutzerklärung
             </Link>
             <Link
               to="#"
-              className="text-gray-400 hover:text-white transition-colors">
-
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               AGB
             </Link>
           </div>
         </div>
       </div>
-    </footer>);
-
+    </footer>
+  )
 }
