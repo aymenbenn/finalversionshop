@@ -9,7 +9,6 @@ export function AngebotePage() {
     desc: 'Beim Kauf von regionalem Gemüse ab 15€ erhalten Sie eine praktische Baumwolltasche GRATIS dazu! Perfekt für Ihren nächsten Einkauf.',
     img: '/promo.png',
     validity: 'Gültig bis Samstag',
-    badge: 'Top Deal der Woche',
   }
 
   const buttonStyle =
@@ -74,18 +73,18 @@ export function AngebotePage() {
         </div>
       </section>
 
-      {/* TOP DEAL / AKTIONEN */}
+      {/* AKTIONEN / TOP DEAL */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          Aktionen
+        </h2>
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 md:p-12 flex flex-col md:flex-row items-center gap-8">
           <img
             src={topDeal.img}
-            alt="Top Deal"
+            alt="Aktion"
             className="rounded-2xl w-full md:w-1/2 object-cover shadow-md"
           />
           <div className="flex-1 space-y-4">
-            <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-bold">
-              {topDeal.badge}
-            </span>
             <p className="text-gray-500 flex items-center gap-2">
               <Clock className="w-4 h-4" />
               {topDeal.validity}
