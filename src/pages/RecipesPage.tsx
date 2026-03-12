@@ -45,7 +45,7 @@ export const RecipesPage: React.FC = () => {
       {/* Top Banner */}
       <div className="w-full">
         <img
-          src="/recipe banner.png"
+          src="/recipebanner.png"
           alt="Recipe Banner"
           className="w-full object-cover"
         />
