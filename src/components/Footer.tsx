@@ -69,20 +69,21 @@ export function Footer() {
                   Über uns
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/jobs"
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Jobs
-                </Link>
-              </li>
+              
               <li>
                 <Link
                   to="/kontakt"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Kontakt
+                </Link>
+              </li>
+<li>
+                <Link
+                  to="/jobs"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Jobs
                 </Link>
               </li>
             </ul>
