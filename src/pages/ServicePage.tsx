@@ -134,7 +134,7 @@ export function ServicePage() {
         <div className="bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-gray-100 flex flex-col">
           <div className="w-full h-60 rounded-2xl mb-6 overflow-hidden relative">
             <img
-              src="/quote.png"
+              src="/news.png"
               alt="Quote Service"
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -174,7 +174,7 @@ export function ServicePage() {
         <div className="bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-gray-100 flex flex-col">
           <div className="w-full h-60 rounded-2xl mb-6 overflow-hidden relative">
             <img
-              src="/news.png"
+              src="/quote.png"
               alt="News Service"
               className="absolute inset-0 w-full h-full object-cover"
             />
