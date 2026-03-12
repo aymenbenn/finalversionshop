@@ -233,8 +233,10 @@ export function HomePage() {
             </h2>
 
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Als familiengeführtes Unternehmen sind wir stolz auf unsere
-              regionale Verbundenheit.
+              Als familiengeführtes Unternehmen sind wir stolz auf unsere regionale Verbundenheit. Was als kleiner Getränkemarkt begann, ist heute zu einem festen Bestandteil der Region gewachsen.
+            </p>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              Erfahren Sie mehr über unsere Geschichte, unsere Werte und unser Engagement für Nachhaltigkeit.
             </p>
 
             <Link
